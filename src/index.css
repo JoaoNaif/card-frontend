@@ -1,0 +1,109 @@
+@import 'tailwindcss';
+
+/* fontes — apenas os pesos usados no design system */
+@import '@fontsource/cinzel/600.css';
+@import '@fontsource/cinzel/700.css';
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+@theme {
+  /* ===== base (95% da UI deve viver aqui) ===== */
+  --color-bg-0: #08080b; /* fundo raiz */
+  --color-bg-1: #0f0e14; /* seções, sidebar */
+  --color-bg-2: #17151e; /* cards, painéis */
+  --color-bg-3: #1f1d28; /* elementos elevados, inputs, hover */
+  --color-border-subtle: #262330;
+  --color-border-default: #34303f;
+  --color-border-strong: #4a4658;
+
+  --color-text-primary: #edeae3; /* osso — nunca branco puro */
+  --color-text-secondary: #a39fac;
+  --color-text-tertiary: #6b6775;
+  --color-text-disabled: #45424e;
+
+  /* ===== marca — única cor interativa (botões, links, foco, nav ativo) ===== */
+  --color-accent-brand: #7b2ff7;
+  --color-accent-brand-muted: #4a2a8c;
+
+  /* ===== ornamento — só decorativo (divisores, selo, detalhes), nunca clicável ===== */
+  --color-ornament: #a88a3f;
+  --color-ornament-bright: #d1b464;
+
+  /* ===== eixos de personagem — restritos a cards/telas de jogo, nunca na navegação ===== */
+  --color-fire: #e8452c;
+  --color-fire-glow: #ff7a45;
+  --color-fire-bg: #2b1410;
+  --color-frost: #4a7fd9;
+  --color-frost-secondary: #6b4fd9;
+  --color-frost-bg: #12172b;
+
+  /* ===== cor por pilar (tag fina, nunca preenchimento grande) ===== */
+  --color-pillar-material: #e8452c; /* Material */
+  --color-pillar-vetorial: #c97a3e; /* Vetorial */
+  --color-pillar-biologica: #3fa672; /* Biológica */
+  --color-pillar-psiquica: #6b4fd9; /* Psíquica */
+  --color-pillar-fundamental: #4a7fd9; /* Fundamental */
+
+  /* ===== estado (combate/sistema) ===== */
+  --color-success: #3fa672;
+  --color-danger: #d9333f;
+  --color-warning: #d9a23f;
+
+  /* ===== tipografia ===== */
+  --font-display: 'Cinzel', serif; /* wordmark, títulos de tela, nomes de personagem — 600/700 */
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif; /* labels, parágrafos, botões — 400/500 */
+  --font-mono:
+    'JetBrains Mono', ui-monospace, monospace; /* stats, HP/dano, timestamps — usar com tabular-nums */
+
+  /* ===== elevação (nunca cor — shadow-md/lg; hover de card sobe bg-2 -> bg-3) ===== */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.55);
+  --shadow-glow-brand: 0 0 26px rgba(123, 47, 247, 0.22);
+}
+
+/*
+  motion: cubic-bezier(0.4,0,0.2,1) já é o `ease-in-out` padrão do Tailwind — usar essa classe.
+  durações: transição de tela ~450ms -> duration-450, hover ~200ms -> duration-200,
+  feedback de dano ~550ms -> duration-550 (Tailwind aceita qualquer número em duration-*).
+*/
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg-0);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+/*
+  painéis de destaque/cerimônia (cards de acesso, campo de batalha) — corta dois cantos opostos.
+  não usar em elementos densos (cards de personagem, linhas de log): esses ficam retos, borda fina.
+*/
+.panel-notched {
+  --notch: 18px;
+  clip-path: polygon(
+    var(--notch) 0,
+    100% 0,
+    100% calc(100% - var(--notch)),
+    calc(100% - var(--notch)) 100%,
+    0 100%,
+    0 var(--notch)
+  );
+}
