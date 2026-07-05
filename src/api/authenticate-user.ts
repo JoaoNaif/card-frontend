@@ -1,10 +1,10 @@
 import { api } from '../lib/axios'
 
-export interface RegisterUserBody {
+export interface AuthenticateUserBody {
   email: string
   password: string
 }
 
-export async function registerUser({ email, password }: RegisterUserBody) {
+export async function authenticateUser({ email, password }: AuthenticateUserBody) {
   await api.post('/users/authenticate', { email, password })
 }

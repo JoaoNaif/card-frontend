@@ -2,8 +2,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from '@tanstack/react-query'
 import { useForm } from 'react-hook-form'
 import z from 'zod'
-import { registerUser } from '../../api/register-user'
+import { authenticateUser } from '../../api/authenticate-user'
 import { toast } from 'sonner'
+import { useNavigate } from 'react-router-dom'
 
 const signInForm = z.object({
   email: z.email('Digite um email válido'),
@@ -12,7 +13,9 @@ const signInForm = z.object({
 
 type SignInForm = z.infer<typeof signInForm>
 
-export function FormRegister() {
+export function FormAuthenticate() {
+  const navigate = useNavigate()
+
   const {
     register,
     handleSubmit,
@@ -21,20 +24,21 @@ export function FormRegister() {
     resolver: zodResolver(signInForm),
   })
 
-  const { mutateAsync: registerUserFn } = useMutation({
-    mutationFn: registerUser,
+  const { mutateAsync: authenticateUserFn } = useMutation({
+    mutationFn: authenticateUser,
   })
 
   async function handleSignIn(data: SignInForm) {
     try {
-      await registerUserFn({
+      await authenticateUserFn({
         email: data.email,
         password: data.password,
       })
 
-      toast.success('Usuário registrado com sucesso!')
+      toast.success('Usuário autenticado com sucesso!')
+      navigate('/')
     } catch {
-      toast.error('Erro ao registrar usuário!')
+      toast.error('Erro ao autenticar usuário!')
     }
   }
 
