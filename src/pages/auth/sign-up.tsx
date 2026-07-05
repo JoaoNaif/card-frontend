@@ -1,18 +1,18 @@
 import { Link } from 'react-router-dom'
-import { FormAuthenticate } from '../../components/auth/form-authenticate'
+import { FormRegister } from '../../components/auth/form-register'
 
-export function SignIn() {
+export function SignUp() {
   return (
     <>
-      <FormAuthenticate />
+      <FormRegister />
 
       <span className="text-text-tertiary text-[12px] leading-[150%] font-normal mt-3">
-        Sem conta?{' '}
+        Já tem conta?{' '}
         <Link
-          to="/sign-up"
+          to="/sign-in"
           className="text-accent-brand underline cursor-pointer font-medium hover:text-accent-brand/80 transition-all duration-200 ease-linear"
         >
-          Cadastre-se
+          Faça login
         </Link>
       </span>
     </>
