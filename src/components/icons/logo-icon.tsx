@@ -1,6 +1,11 @@
-export function LogoIcon() {
+export interface LogoIconProps {
+  width: number
+  height: number
+}
+
+export function LogoIcon({ height, width }: LogoIconProps) {
   return (
-    <svg width="56" height="56" viewBox="0 0 44 44" fill="none">
+    <svg width={width} height={height} viewBox="0 0 44 44" fill="none">
       <polygon points="22,1 43,22 22,43 1,22" stroke="#d1b464" strokeWidth="1.1" opacity="0.9" />
       <line x1="22" y1="1" x2="22" y2="7" stroke="#d1b464" strokeWidth="1" opacity="0.7" />
       <line x1="22" y1="37" x2="22" y2="43" stroke="#d1b464" strokeWidth="1" opacity="0.7" />
