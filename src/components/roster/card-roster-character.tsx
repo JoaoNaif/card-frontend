@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import type { Character } from '../../api/types/character.ts'
 import type { PowerPillar } from '../../api/types/power.ts'
-import { RankingCharacter } from '../raking-character.tsx'
+import { RankingCharacter } from '../ranking-character.tsx'
 import { SeparateBorder } from '../separete-border.tsx'
 
 export interface CardRosterCharacterProps {
@@ -55,7 +55,7 @@ export function CardRosterChracter({ character }: CardRosterCharacterProps) {
   return (
     <Link
       to={`/character/${character.id}`}
-      className={`flex flex-col gap-1 relative p-2 bg-bg-2 hover:bg-linear-to-tr hover:from-bg-2 hover:to-bg-3 hover:scale-105 transition-all duration-700 ease-out cursor-pointer border border-t-border-default border-r-border-default border-b-border-default border-l-[3px] ${pillar.border}`}
+      className={`flex flex-col gap-1 relative hover:z-20 p-2 bg-bg-2 hover:bg-linear-to-tr hover:from-bg-2 hover:to-bg-3 hover:scale-105 transition-all duration-700 ease-out cursor-pointer border border-t-border-default border-r-border-default border-b-border-default border-l-[3px] ${pillar.border}`}
     >
       <div className="flex items-center justify-between">
         <span className="font-display uppercase font-medium text-[16px]">{character.name}</span>
