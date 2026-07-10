@@ -23,7 +23,7 @@ export function SideBar() {
 
   return (
     <aside
-      className={`flex lg:flex-col flex-row justify-between items-start relative lg:h-screen ${expand ? 'lg:w-60 w-full  h-87.5' : 'lg:w-15.75 h-14'} transition-all duration-500 ease-out bg-bg-1 lg:border-r border-t lg:border-t-0 border-border-default`}
+      className={`flex lg:flex-col flex-row justify-between items-start lg:static fixed bottom-0 left-0 z-50 w-full lg:h-screen ${expand ? 'lg:w-60 w-full  h-87.5' : 'lg:w-15.75 h-14'} transition-all duration-500 ease-out bg-bg-1 lg:border-r border-t lg:border-t-0 border-border-default`}
     >
       <div className="flex flex-row lg:flex-col w-full border-border-default lg:border-none">
         <header className="flex items-center lg:flex-col flex-row">
@@ -43,7 +43,7 @@ export function SideBar() {
         <nav
           className={`lg:flex ${expand ? 'block' : 'hidden'} flex-col w-full lg:static absolute top-14 left-0`}
         >
-          <div className={`flex flex-col gap-2  ${expand ? 'items-start' : 'items-center'}`}>
+          <div className={`flex flex-col gap-2 mb-7  ${expand ? 'items-start' : 'items-center'}`}>
             <span className="px-4 pt-5 uppercase text-[10px] font-semibold leading-[150%] text-text-disabled">
               Jogo
             </span>

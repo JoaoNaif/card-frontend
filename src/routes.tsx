@@ -3,12 +3,13 @@ import { AuthLayout } from './pages/_layout/auth'
 import { SignIn } from './pages/auth/sign-in'
 import { SignUp } from './pages/auth/sign-up'
 import { AppLayout } from './pages/_layout/app'
+import { Roster } from './pages/home/roster/roster'
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <AppLayout />,
-    children: [{ path: '/roster', element: <h2>Bom dia!</h2> }],
+    children: [{ path: '/roster', element: <Roster /> }],
   },
 
   {

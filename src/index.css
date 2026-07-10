@@ -39,6 +39,14 @@
   --color-frost-secondary: #6b4fd9;
   --color-frost-bg: #12172b;
 
+  --color-chaotic: #facc15;
+  --color-divergent: #9333ea;
+  --color-singular: #9333ea;
+  --color-non-linear: #2563eb;
+  --color-differentiable: #10b981;
+  --color-continuous: #f59e0b;
+  --color-discreet: #64748b;
+
   /* ===== cor por pilar (tag fina, nunca preenchimento grande) ===== */
   --color-pillar-material: #e8452c; /* Material */
   --color-pillar-vetorial: #c97a3e; /* Vetorial */
