@@ -39,12 +39,12 @@
   --color-frost-secondary: #6b4fd9;
   --color-frost-bg: #12172b;
 
-  --color-chaotic: #facc15;
-  --color-divergent: #9333ea;
-  --color-singular: #9333ea;
-  --color-non-linear: #2563eb;
-  --color-differentiable: #10b981;
-  --color-continuous: #f59e0b;
+  --color-chaotic: #ffd700;
+  --color-divergent: #ef4444;
+  --color-singular: #f97316;
+  --color-non-linear: #a855f7;
+  --color-differentiable: #3b82f6;
+  --color-continuous: #22c55e;
   --color-discreet: #64748b;
 
   /* ===== cor por pilar (tag fina, nunca preenchimento grande) ===== */
