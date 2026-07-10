@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
-import { HeaderRoster } from './header-roster'
-import { fetchCharacterRoster } from '../../../api/character/fetch-character-roster'
-import { CardRosterChracter } from './card-roster-character'
+import { HeaderRoster } from '../../components/roster/header-roster'
+import { fetchCharacterRoster } from '../../api/character/fetch-character-roster'
+import { CardRosterChracter } from '../../components/roster/card-roster-character'
 
 export function Roster() {
   const { data: characters } = useQuery({

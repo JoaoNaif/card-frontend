@@ -1,7 +1,8 @@
-import type { Character } from '../../../api/types/character.ts'
-import type { PowerPillar } from '../../../api/types/power.ts'
-import { RankingCharacter } from '../../../components/raking-character.tsx'
-import { SeparateBorder } from '../../../components/separete-border.tsx'
+import { Link } from 'react-router-dom'
+import type { Character } from '../../api/types/character.ts'
+import type { PowerPillar } from '../../api/types/power.ts'
+import { RankingCharacter } from '../raking-character.tsx'
+import { SeparateBorder } from '../separete-border.tsx'
 
 export interface CardRosterCharacterProps {
   character: Character
@@ -52,7 +53,8 @@ export function CardRosterChracter({ character }: CardRosterCharacterProps) {
   const pillar = PILLAR_STYLES[character.power.pillar]
 
   return (
-    <article
+    <Link
+      to={`/character/${character.id}`}
       className={`flex flex-col gap-1 relative p-2 bg-bg-2 hover:bg-linear-to-tr hover:from-bg-2 hover:to-bg-3 hover:scale-105 transition-all duration-700 ease-out cursor-pointer border border-t-border-default border-r-border-default border-b-border-default border-l-[3px] ${pillar.border}`}
     >
       <div className="flex items-center justify-between">
@@ -118,6 +120,6 @@ export function CardRosterChracter({ character }: CardRosterCharacterProps) {
       <div
         className={`h-px w-full ${pillar.dot} absolute -bottom-px left-0 bg-linear-to-r ${pillar.dotFrom} to-border-default`}
       />
-    </article>
+    </Link>
   )
 }
