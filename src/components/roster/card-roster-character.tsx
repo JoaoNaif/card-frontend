@@ -3,6 +3,7 @@ import type { Character } from '../../api/types/character.ts'
 import type { PowerPillar } from '../../api/types/power.ts'
 import { RankingCharacter } from '../ranking-character.tsx'
 import { SeparateBorder } from '../separete-border.tsx'
+import { StatusRoster } from './status-roster.tsx'
 
 export interface CardRosterCharacterProps {
   character: Character
@@ -99,22 +100,10 @@ export function CardRosterChracter({ character }: CardRosterCharacterProps) {
       <SeparateBorder />
 
       <ul className="flex justify-between mt-4">
-        <li className="flex flex-col justify-center items-center">
-          <p className="text-[12px] leading-[150%] text-text-tertiary">Atq</p>
-          <span className="text-[16px] leading-[150%] font-display">{character.baseAtk}</span>
-        </li>
-        <li className="flex flex-col justify-center items-center">
-          <p className="text-[12px] leading-[150%] text-text-tertiary">Def</p>
-          <span className="text-[16px] leading-[150%] font-display">{character.baseDef}</span>
-        </li>
-        <li className="flex flex-col justify-center items-center">
-          <p className="text-[12px] leading-[150%] text-text-tertiary">Vel</p>
-          <span className="text-[16px] leading-[150%] font-display">{character.baseSpd}</span>
-        </li>
-        <li className="flex flex-col justify-center items-center">
-          <p className="text-[12px] leading-[150%] text-text-tertiary">Hp</p>
-          <span className="text-[16px] leading-[150%] font-display">{character.baseHp}</span>
-        </li>
+        <StatusRoster text="Atq" status={character.atk} />
+        <StatusRoster text="Def" status={character.def} />
+        <StatusRoster text="Vel" status={character.spd} />
+        <StatusRoster text="Hp" status={character.hp} />
       </ul>
 
       <div

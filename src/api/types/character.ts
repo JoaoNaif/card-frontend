@@ -1,7 +1,5 @@
 import type { Power } from './power'
-
-export type Ranking =
-  'DISCRETO' | 'CONTINUO' | 'DIFERENCIAVEL' | 'NAO_LINEAR' | 'SINGULAR' | 'DIVERGENTE' | 'CAOTICO'
+import type { Ranking } from './ranking'
 
 export interface Character {
   id: string
@@ -11,10 +9,10 @@ export interface Character {
   ranking: Ranking
   level: number
   xp: number
-  baseHp: number
-  baseAtk: number
-  baseDef: number
-  baseSpd: number
+  hp: number
+  atk: number
+  def: number
+  spd: number
   power: Power
   traits: { id: string; name: string }[]
   createdAt: Date

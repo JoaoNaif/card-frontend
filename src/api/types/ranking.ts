@@ -1,0 +1,2 @@
+export type Ranking =
+  'DISCRETO' | 'CONTINUO' | 'DIFERENCIAVEL' | 'NAO_LINEAR' | 'SINGULAR' | 'DIVERGENTE' | 'CAOTICO'

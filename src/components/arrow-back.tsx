@@ -8,7 +8,7 @@ interface ArrowBackProps {
 
 export function ArrowBack({ link, text }: ArrowBackProps) {
   return (
-    <Link to={link} className="flex items-center gap-2 group">
+    <Link to={link} className="flex items-center gap-2 w-fit group">
       <ArrowLeft
         size={14}
         className="text-text-tertiary group-hover:text-text-primary transition-colors duration-700 ease-out"

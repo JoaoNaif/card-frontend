@@ -12,7 +12,7 @@ export const router = createBrowserRouter([
     element: <AppLayout />,
     children: [
       { path: '/roster', element: <Roster /> },
-      { path: '/character/:id', element: <CharacterDetail /> },
+      { path: '/character/:characterId', element: <CharacterDetail /> },
     ],
   },
 

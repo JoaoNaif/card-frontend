@@ -39,6 +39,31 @@
   --color-frost-secondary: #6b4fd9;
   --color-frost-bg: #12172b;
 
+  /* ATK */
+  --color-attack: #f97316;
+  --color-attack-glow: #fb923c;
+  --color-attack-bg: #2a1408;
+
+  /* CURA */
+  --color-heal: #22c55e;
+  --color-heal-glow: #4ade80;
+  --color-heal-bg: #0f2418;
+
+  /* BUFF */
+  --color-buff: #3b82f6;
+  --color-buff-glow: #60a5fa;
+  --color-buff-bg: #101c2d;
+
+  /* DEBUFF */
+  --color-debuff: #e8452c;
+  --color-debuff-glow: #ff7a45;
+  --color-debuff-bg: #2b1410;
+
+  /* CAMPO */
+  --color-field: #8b5cf6;
+  --color-field-glow: #a78bfa;
+  --color-field-bg: #1b1430;
+
   --color-chaotic: #ffd700;
   --color-divergent: #ef4444;
   --color-singular: #f97316;

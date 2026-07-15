@@ -1,4 +1,4 @@
-import type { Ranking } from '../api/types/character'
+import type { Ranking } from '../api/types/ranking'
 
 const RANKING_STYLES: Record<
   Ranking,
