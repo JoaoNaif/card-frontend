@@ -52,7 +52,6 @@ const PILLAR_STYLES: Record<
 
 export function CardRosterChracter({ character }: CardRosterCharacterProps) {
   const pillar = PILLAR_STYLES[character.power.pillar]
-
   return (
     <Link
       to={`/character/${character.id}`}
@@ -60,13 +59,30 @@ export function CardRosterChracter({ character }: CardRosterCharacterProps) {
     >
       <div className="flex items-center justify-between">
         <span className="font-display uppercase font-medium text-[16px]">{character.name}</span>
-        <div
-          className={`flex items-center gap-1 py-px px-2 border ${pillar.border} ${pillar.dotPer}`}
-        >
-          <div className={`h-1 w-1 rotate-45 ${pillar.dot}`} />
-          <span className={`font-normal text-[10px] leading-[150%] ${pillar.span} `}>
-            {character.power.pillar}
-          </span>
+        <div className="flex items-center gap-2">
+          <div
+            className={`flex items-center gap-1 py-px px-2 border ${pillar.border} ${pillar.dotPer}`}
+          >
+            <div className={`h-1 w-1 rotate-45 ${pillar.dot}`} />
+            <span className={`font-normal text-[10px] leading-[150%] ${pillar.span} `}>
+              {character.power.pillar}
+            </span>
+          </div>
+
+          {character.secondaryPower && (
+            <div
+              className={`flex items-center gap-1 py-px px-2 border ${PILLAR_STYLES[character.secondaryPower.pillar].border} ${PILLAR_STYLES[character.secondaryPower.pillar].dotPer}`}
+            >
+              <div
+                className={`h-1 w-1 rotate-45 ${PILLAR_STYLES[character.secondaryPower.pillar].dot}`}
+              />
+              <span
+                className={`font-normal text-[10px] leading-[150%] ${PILLAR_STYLES[character.secondaryPower.pillar].span}`}
+              >
+                {character.secondaryPower.pillar}
+              </span>
+            </div>
+          )}
         </div>
       </div>
 

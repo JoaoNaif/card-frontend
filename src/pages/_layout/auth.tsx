@@ -15,7 +15,7 @@ export function AuthLayout() {
           </p>
         </div>
 
-        <div className="flex items-center justify-center gap-4 border border-border-default hover:border-border-strong bg-bg-2 p-3 mt-7 cursor-pointer w-full ">
+        <div className="flex items-center justify-center gap-4 border border-border-default hover:border-border-strong bg-bg-2 p-3 my-7 cursor-pointer w-full ">
           <GoogleIcon />
 
           <span className="text-text-primary leading-[150%] font-normal text-[14px]">

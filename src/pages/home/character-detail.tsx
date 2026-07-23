@@ -24,12 +24,14 @@ export function CharacterDetail() {
       {character.pendingSkillSelections > 0 && (
         <PendingSkill
           characterid={character.id}
+          activeSkills={character.skills}
           characterInfos={{
             atk: character.atk,
             def: character.def,
             spd: character.spd,
             hp: character.hp,
             name: character.name,
+            characterId: character.id,
           }}
         />
       )}

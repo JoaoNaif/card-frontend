@@ -15,7 +15,7 @@ interface StatusModeProps {
 
 export function StatusMode({ mode }: StatusModeProps) {
   return (
-    <div className="flex items-center gap-2 text-[12px] laeding-[150%]">
+    <div className="flex flex-wrap items-center gap-2 text-[12px] laeding-[150%]">
       {mode.damage > 0 && (
         <span className="border border-attack bg-attack-bg text-attack px-2 py-px">Ataque</span>
       )}

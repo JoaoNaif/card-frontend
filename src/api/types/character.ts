@@ -13,6 +13,7 @@ export interface Character {
   atk: number
   def: number
   spd: number
+  secondaryPower?: Power | null
   power: Power
   traits: { id: string; name: string }[]
   createdAt: Date

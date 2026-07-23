@@ -7,9 +7,10 @@ import { BattleFieldTrait } from './battle-field-trait'
 
 interface SkillOptionProps {
   skill: Skill
+  onSelect?: (skill: Skill) => void
 }
 
-export function SkillOption({ skill }: SkillOptionProps) {
+export function SkillOption({ skill, onSelect }: SkillOptionProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [contentHeight, setContentHeight] = useState(0)
   const detailsRef = useRef<HTMLDivElement>(null)
@@ -29,7 +30,8 @@ export function SkillOption({ skill }: SkillOptionProps) {
     <li
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
-      className="border border-border-strong p-3 transition-all duration-700 ease-out"
+      onClick={() => onSelect?.(skill)}
+      className={`border border-border-strong p-3 group hover:bg-bg-3 transition-all duration-700 ease-out ${onSelect ? 'cursor-pointer' : ''}`}
     >
       <div className="flex flex-col gap-2">
         <StatusMode
@@ -82,7 +84,7 @@ export function SkillOption({ skill }: SkillOptionProps) {
         {skill.appliesBattleFieldId && skill.battleField && (
           <div className="flex flex-col gap-3">
             <div className="w-full h-5 relative flex items-center justify-center transition-all duration-700 ease-out">
-              <span className="text-center flex gap-1 items-center text-[14px] laeding-[150%] z-10 bg-bg-2 px-2 text-text-tertiary">
+              <span className="text-center flex gap-1 items-center text-[14px] leading-[150%] z-10 bg-bg-2 group-hover:bg-bg-3 transition-all duration-700 ease-out px-2 text-text-tertiary">
                 <p>Detalhes</p>
                 <ChevronDown
                   size={16}
@@ -112,7 +114,7 @@ export function SkillOption({ skill }: SkillOptionProps) {
                         {skill.fieldDuration} Turnos
                       </span>
                     </div>
-                    <h4 className="font-display text-[16px] leaindg-[150%] text-text-primary">
+                    <h4 className="font-display text-[16px] leading-[150%] text-text-primary">
                       {skill.battleField.name}
                     </h4>
                   </div>
